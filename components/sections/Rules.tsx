@@ -30,7 +30,7 @@ export default function Rules() {
     >
       <div
         aria-hidden
-        className="absolute right-0 top-1/3 h-[26rem] w-[26rem] rounded-full bg-bluebird/20 blur-[140px]"
+        className="absolute right-0 top-1/3 h-[26rem] w-[26rem] rounded-full bg-bluetree/20 blur-[140px]"
       />
 
       <div className="relative mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-24">

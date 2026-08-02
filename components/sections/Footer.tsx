@@ -44,7 +44,7 @@ export default function Footer() {
 
         <Reveal delay={0.1}>
           <p className="font-sans text-[0.65rem] uppercase tracking-widest text-white/35 sm:text-xs">
-            Evento exclusivo • {siteConfig.venue}
+            Evento exclusivo • {siteConfig.venue} · {siteConfig.city}
           </p>
         </Reveal>
 

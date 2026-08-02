@@ -7,9 +7,10 @@ export const siteConfig = {
   name: "AFTER 222",
   tagline: "Nem todo quarto é igual. Nem toda noite se repete.",
   description:
-    "Um convite secreto. Às 02:22, uma porta se abre no Hotel Blue Bird. Quarto 222.",
+    "Um convite secreto. Às 02:22, uma porta se abre no Blue Tree, em Jaguariúna. Quarto 222.",
   url: "https://after222.com.br",
-  venue: "Hotel Blue Bird",
+  venue: "Blue Tree",
+  city: "Jaguariúna",
   room: "Quarto 222",
 
   /**
@@ -18,16 +19,22 @@ export const siteConfig = {
    * ─────────────────────────────────────────────────────────────
    *  Basta trocar a data/hora abaixo para reconfigurar o contador.
    *
-   *  Formato: ISO 8601 com fuso horário explícito.
+   *  Formato: ISO 8601 com fuso horário explícito, em relógio de 24 h.
    *  `-03:00` = horário de Brasília.
    *
-   *  Exemplos:
-   *    "2026-09-12T02:22:00-03:00"  → 12/set/2026 às 02:22 (Brasília)
-   *    "2026-12-31T02:22:00-03:00"  → 31/dez/2026 às 02:22 (Brasília)
+   *  A hora do evento é 02:22 da madrugada (02:22 AM) — em 24 h isso é
+   *  "T02:22:00". Duas da tarde seria "T14:22:00"; não use esse.
+   *
+   *  Só a DATA muda de edição para edição:
+   *    "2026-09-12T02:22:00-03:00"  → 12/set/2026 às 02:22 da madrugada
+   *    "2026-12-31T02:22:00-03:00"  → 31/dez/2026 às 02:22 da madrugada
    */
   eventDate: "2026-09-12T02:22:00-03:00",
 
-  /** Rótulo humano exibido abaixo do contador. */
+  /**
+   * Rótulo humano exibido abaixo do contador.
+   * Não é derivado de `eventDate` — ao trocar a data, troque aqui também.
+   */
   eventDateLabel: "12 de setembro • 02:22",
 
   links: {
@@ -53,7 +60,6 @@ export const lineup: LineupArtist[] = [
   { emoji: "🎧", name: "Felipe Braga", role: "Dihh-Jay", initials: "FB" },
   { emoji: "💪", name: "Gabriel Salteiro", role: "Fisioculturismo", initials: "GS" },
   { emoji: "💪", name: "Carlos", role: "Fisioculturismo", initials: "C" },
-  { emoji: "🦅", name: "FEJESP", role: "Núcleo São Paulo", initials: "F" },
 ];
 
 export type Rule = {

@@ -113,7 +113,7 @@ export default function CorridorScene() {
           <stop offset="100%" stopColor="#F2DC95" stopOpacity="0.6" />
         </linearGradient>
 
-        {/* Acento azul Hotel Blue Bird nas quinas frontais */}
+        {/* Acento azul Blue Tree nas quinas frontais */}
         <linearGradient id="blueEdge" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#1E4079" stopOpacity="0.5" />
           <stop offset="100%" stopColor="#12294F" stopOpacity="0" />
@@ -228,7 +228,7 @@ export default function CorridorScene() {
             );
           })}
 
-          {/* Quina frontal com o azul do Blue Bird */}
+          {/* Quina frontal com o azul do Blue Tree */}
           <polygon points={`0,0 90,20 90,${VB_H - 30} 0,${VB_H}`} fill="url(#blueEdge)" />
         </g>
       </defs>

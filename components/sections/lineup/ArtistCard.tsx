@@ -7,6 +7,8 @@ import type { LineupArtist } from "@/lib/site-config";
 type Props = {
   artist: LineupArtist;
   index: number;
+  /** Largura da coluna — definida pelo grid em `Lineup.tsx`. */
+  widthClass: string;
 };
 
 const SPRING = { stiffness: 220, damping: 22, mass: 0.5 };
@@ -15,7 +17,7 @@ const SPRING = { stiffness: 220, damping: 22, mass: 0.5 };
  * Card do line-up com inclinação 3D seguindo o ponteiro
  * e brilho dourado no hover.
  */
-export default function ArtistCard({ artist, index }: Props) {
+export default function ArtistCard({ artist, index, widthClass }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const px = useMotionValue(0);
@@ -45,7 +47,7 @@ export default function ArtistCard({ artist, index }: Props) {
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 1, delay: index * 0.09, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+      className={widthClass}
       style={{ perspective: 1200 }}
     >
       <motion.div

@@ -6,7 +6,7 @@
   :root {
     --void: 9 9 9;
     --gold: 212 175 55;
-    --bluebird: 18 41 79;
+    --bluetree: 18 41 79;
 
     /* Posição do cursor — alimentada por <CursorLight /> */
     --cursor-x: 50%;

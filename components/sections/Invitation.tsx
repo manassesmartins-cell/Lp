@@ -71,7 +71,7 @@ export default function Invitation() {
           {/* Brilho baixo, como luz vinda de baixo da porta */}
           <div
             aria-hidden
-            className="absolute left-1/2 top-1/2 h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-bluebird/20 blur-[130px]"
+            className="absolute left-1/2 top-1/2 h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-bluetree/20 blur-[130px]"
           />
           <Particles density={14} />
 

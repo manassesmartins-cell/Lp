@@ -22,8 +22,8 @@ const config: Config = {
           deep: "#8C6D1F",
           dim: "#6B5416",
         },
-        /* Acentos azul escuro — Hotel Blue Bird */
-        bluebird: {
+        /* Acentos azul escuro — Blue Tree */
+        bluetree: {
           DEFAULT: "#12294F",
           light: "#1E4079",
           deep: "#0A1730",

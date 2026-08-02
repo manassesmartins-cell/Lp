@@ -19,10 +19,10 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — ${siteConfig.venue}`,
+  title: `${siteConfig.name} — ${siteConfig.venue}, ${siteConfig.city}`,
   description: siteConfig.description,
   openGraph: {
-    title: `${siteConfig.name} — ${siteConfig.venue}`,
+    title: `${siteConfig.name} — ${siteConfig.venue}, ${siteConfig.city}`,
     description: siteConfig.description,
     type: "website",
     locale: "pt_BR",

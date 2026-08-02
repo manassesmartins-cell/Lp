@@ -1,8 +1,8 @@
 # AFTER 222
 
-Landing page do **AFTER 222** — evento privado no Hotel Blue Bird, Quarto 222.
+Landing page do **AFTER 222** — evento privado no Blue Tree, em Jaguariúna — Quarto 222.
 
-Preto profundo, dourado metálico e acentos azuis do Blue Bird. A página foi
+Preto profundo, dourado metálico e acentos azuis do Blue Tree. A página foi
 construída para parecer um convite secreto, não uma página de evento comum.
 
 ## Stack
@@ -37,6 +37,12 @@ eventDate: "2026-09-12T02:22:00-03:00",   // ISO 8601 com fuso (-03:00 = Brasíl
 eventDateLabel: "12 de setembro • 02:22", // rótulo exibido abaixo do contador
 ```
 
+O horário é **02:22 da madrugada**. O formato é de 24 horas, então 02:22 AM
+é `T02:22:00` — duas da tarde seria `T14:22:00`. Só a data costuma mudar.
+
+`eventDateLabel` não é derivado de `eventDate`: ao trocar a data, troque os
+dois campos.
+
 O contador recalcula a cada segundo, zera sozinho quando a data chega
 (passa a exibir "A porta está aberta.") e avisa no console se a data estiver
 em formato inválido. Os números só são renderizados após a hidratação, para
@@ -47,8 +53,8 @@ não divergir entre servidor e cliente.
 ```ts
 links: {
   instagram: "https://instagram.com/after222",
-  whatsapp:  "https://wa.me/5511999999999",
-  guestList: "https://wa.me/...",  // destino de "Entrar na lista" e "Quero meu acesso"
+  whatsapp:  "https://wa.me/5511994294906",
+  guestList: "https://wa.me/5511994294906?text=...", // "Entrar na lista" e "Quero meu acesso"
 }
 ```
 

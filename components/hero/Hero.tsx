@@ -145,7 +145,7 @@ export default function Hero() {
         >
           <span className="flex items-center gap-2.5 font-sans text-[0.68rem] uppercase tracking-widest text-white/45 sm:text-xs">
             <MapPin className="h-3.5 w-3.5 text-gold/80" strokeWidth={1.5} />
-            {siteConfig.venue}
+            {siteConfig.venue} · {siteConfig.city}
           </span>
           <span aria-hidden className="hidden h-4 w-px bg-white/10 sm:block" />
           <span className="flex items-center gap-2.5 font-sans text-[0.68rem] uppercase tracking-widest text-white/45 sm:text-xs">
