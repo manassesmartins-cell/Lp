@@ -32,9 +32,11 @@ export const siteConfig = {
 
   links: {
     instagram: "https://instagram.com/after222",
-    whatsapp: "https://wa.me/5511999999999",
+    /** WhatsApp oficial do evento: (11) 99429-4906. */
+    whatsapp: "https://wa.me/5511994294906",
     /** Destino dos botões de conversão ("Entrar na lista" / "Quero meu acesso"). */
-    guestList: "https://wa.me/5511999999999?text=Quero%20entrar%20na%20lista%20do%20AFTER%20222",
+    guestList:
+      "https://wa.me/5511994294906?text=Quero%20entrar%20na%20lista%20do%20AFTER%20222",
   },
 } as const;
 
