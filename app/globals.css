@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --void: 9 9 9;
+    --gold: 212 175 55;
+    --bluebird: 18 41 79;
+
+    /* Posição do cursor — alimentada por <CursorLight /> */
+    --cursor-x: 50%;
+    --cursor-y: 30%;
+  }
+
+  * {
+    @apply border-white/5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Lenis assume o controle do scroll: desliga o smooth nativo p/ não brigar. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  html.lenis {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-void text-white/80 font-sans antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+
+    /* A Cormorant usa algarismos antigos por padrão — "222" e "02:22"
+       sairiam menores que as maiúsculas. Força algarismos de caixa alta
+       em toda a página. */
+    font-variant-numeric: lining-nums;
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.28);
+    color: #f7ecc9;
+  }
+
+  /* Barra de rolagem discreta e dourada */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8c6d1f, #d4af37);
+    border-radius: 999px;
+  }
+
+  :focus-visible {
+    outline: 1px solid rgba(212, 175, 55, 0.8);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* ── Tipografia ───────────────────────────────────────────── */
+  .text-gold-sheen {
+    @apply bg-gold-sheen bg-clip-text text-transparent;
+    background-size: 250% 100%;
+    animation: sheen-slide 7s ease-in-out infinite;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[0.62rem] uppercase tracking-cinematic text-gold/70 sm:text-xs;
+  }
+
+  /* ── Vidro leve ───────────────────────────────────────────── */
+  .glass {
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.045) 0%,
+      rgba(255, 255, 255, 0.012) 45%,
+      rgba(18, 41, 79, 0.05) 100%
+    );
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .glass-gold {
+    border-color: rgba(212, 175, 55, 0.22);
+    box-shadow:
+      0 0 0 1px rgba(212, 175, 55, 0.04),
+      0 20px 60px -30px rgba(212, 175, 55, 0.4);
+  }
+
+  /* ── Filete dourado ───────────────────────────────────────── */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 175, 55, 0.55),
+      transparent
+    );
+  }
+
+  /* ── Grão de filme ────────────────────────────────────────── */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: grain-shift 800ms steps(3) infinite;
+  }
+
+  /* ── Vinheta cinematográfica ──────────────────────────────── */
+  .vignette::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 80% 65% at 50% 45%,
+      transparent 25%,
+      rgba(5, 5, 5, 0.55) 75%,
+      #050505 100%
+    );
+  }
+}
+
+@layer utilities {
+  .perspective-\[1400px\] {
+    perspective: 1400px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-4%, 3%);
+  }
+  66% {
+    transform: translate(3%, -2%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
