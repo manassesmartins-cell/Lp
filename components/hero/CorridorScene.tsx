@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 /**
  * Corredor de hotel em perspectiva de um ponto, desenhado em SVG.
  * Nenhuma imagem externa: a cena escala sem perder nitidez e
- * a porta 222 no fundo é a única fonte de luz forte do quadro.
+ * a porta acesa no fundo é a única fonte de luz forte do quadro.
  *
  * Sistema de coordenadas: 1600 × 900, ponto de fuga em (800, 330).
  */
@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site-config";
 const VB_W = 1600;
 const VB_H = 900;
 
-/** Retângulo do fundo do corredor (a parede onde fica a porta 222). */
+/** Retângulo do fundo do corredor (a parede onde fica a porta acesa). */
 const END_L = 690;
 const END_R = 910;
 const END_T = 150;
@@ -91,7 +91,7 @@ export default function CorridorScene() {
           <stop offset="100%" stopColor="#1C0609" />
         </linearGradient>
 
-        {/* A porta 222 — luz quente */}
+        {/* A porta — luz quente */}
         <linearGradient id="doorLight" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#FFE1E5" />
           <stop offset="35%" stopColor="#FF6B7D" />
@@ -279,7 +279,7 @@ export default function CorridorScene() {
         fill="url(#spill)"
       />
 
-      {/* ── A porta 222 ─────────────────────────────────────── */}
+      {/* ── A porta ─────────────────────────────────────────── */}
       <g filter="url(#softGlow)">
         <rect
           x={DOOR_X}

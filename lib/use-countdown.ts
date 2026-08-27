@@ -53,7 +53,7 @@ export function useCountdown(isoDate: string): CountdownState {
 
     if (Number.isNaN(target)) {
       console.warn(
-        `[AFTER 222] Data inválida em siteConfig.eventDate: "${isoDate}". ` +
+        `[AFTER 702] Data inválida em siteConfig.eventDate: "${isoDate}". ` +
           `Use o formato ISO 8601, ex.: "2026-09-12T02:22:00-03:00".`
       );
       setState({ mounted: true, finished: false, timeLeft: ZERO });

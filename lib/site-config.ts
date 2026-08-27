@@ -1,14 +1,24 @@
 /**
- * Configuração central do AFTER 222.
+ * Configuração central do AFTER 702.
  * Tudo que muda de edição para edição vive aqui.
  */
 
 export const siteConfig = {
-  name: "AFTER 222",
+  name: "AFTER 702",
   tagline: "Você entra de um jeito. Não sai o mesmo.",
+
+  /**
+   * Linhagem: o 702 sucede o 222. É o que dá peso ao número novo —
+   * sem isso, "702" é só um quarto diferente.
+   */
+  lineage: "O filho legítimo do 222",
+  /** A promessa da edição, usada como fecho do Convite. */
+  promise: "A chance de escrever a eternidade novamente.",
+  /** Nome da edição anterior — referenciado na galeria. */
+  predecessor: "222",
   description:
     "Um convite secreto. Às 23:00, uma porta se abre no Hotel Boulevard Blue Valley, em Belo Horizonte. Quarto 702.",
-  url: "https://after222.com.br",
+  url: "https://after702.com.br",
   venue: "Hotel Boulevard Blue Valley",
   /** Versão curta, para linhas estreitas (hero no mobile, rodapé). */
   venueShort: "Boulevard Blue Valley",
@@ -44,12 +54,12 @@ export const siteConfig = {
   eventShort: "Quinta · 23:00",
 
   links: {
-    instagram: "https://instagram.com/after222",
+    instagram: "https://instagram.com/after702",
     /** WhatsApp oficial do evento: (11) 99429-4906. */
     whatsapp: "https://wa.me/5511994294906",
     /** Destino dos botões de conversão ("Entrar na lista" / "Quero meu acesso"). */
     guestList:
-      "https://wa.me/5511994294906?text=Quero%20entrar%20na%20lista%20do%20AFTER%20222",
+      "https://wa.me/5511994294906?text=Quero%20entrar%20na%20lista%20do%20AFTER%20702",
   },
 } as const;
 

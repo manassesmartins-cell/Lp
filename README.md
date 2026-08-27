@@ -1,11 +1,14 @@
-# AFTER 222
+# AFTER 702
 
-Landing page do **AFTER 222** — evento privado no Hotel Boulevard Blue Valley,
+Landing page do **AFTER 702** — evento privado no Hotel Boulevard Blue Valley,
 em Belo Horizonte — Quarto 702.
 
 Preto quente, carmim e marfim. A página foi construída para parecer um convite
 secreto, não uma página de evento comum, e é atravessada por um conceito:
 **ruptura** — você não é o mesmo antes e depois de cruzar aquela porta.
+
+O 702 é o sucessor do 222: a linhagem é parte da narrativa, e aparece no
+rótulo do hero, no fecho do Convite e no título da galeria.
 
 ## Stack
 
@@ -54,7 +57,7 @@ não divergir entre servidor e cliente.
 
 ```ts
 links: {
-  instagram: "https://instagram.com/after222",
+  instagram: "https://instagram.com/after702",
   whatsapp:  "https://wa.me/5511994294906",
   guestList: "https://wa.me/5511994294906?text=...", // "Entrar na lista" e "Quero meu acesso"
 }
@@ -66,6 +69,13 @@ links: {
 rodapé usam a curta porque o nome inteiro não cabe em uma linha no mobile.
 `roomNumber` é só o número, e é ele que aparece gravado na porta do corredor
 do hero: mudar o quarto na configuração muda a porta desenhada.
+
+### Linhagem
+
+`lineage`, `promise` e `predecessor` carregam a narrativa de sucessão do 222
+para o 702. `lineage` é o rótulo acima do título no hero, `promise` fecha o
+Convite e `predecessor` nomeia a galeria. O nome da edição sai de `name` —
+o hero e o rodapé leem de lá, então trocar o nome troca a página inteira.
 
 ### Line-up, regras e galeria
 

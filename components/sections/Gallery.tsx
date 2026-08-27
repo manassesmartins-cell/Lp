@@ -23,8 +23,8 @@ export default function Gallery() {
       <div className="relative mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Galeria"
-          title="Fragmentos da última edição"
-          subtitle="O que aconteceu lá dentro fica lá dentro. Isto é tudo o que podemos mostrar."
+          title={`Fragmentos do ${siteConfig.predecessor}`}
+          subtitle={`O que ficou da edição anterior. É tudo o que podemos mostrar — e é de lá que o ${siteConfig.roomNumber} vem.`}
         />
 
         <div className="mt-20 grid auto-rows-[8rem] grid-flow-row-dense grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-6">

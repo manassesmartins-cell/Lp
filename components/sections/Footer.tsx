@@ -36,7 +36,7 @@ export default function Footer() {
             aria-label="Voltar ao topo"
           >
             <span className="font-display text-3xl font-light tracking-[0.18em] text-crimson-sheen sm:text-4xl">
-              AFTER 222
+              {siteConfig.name}
             </span>
             <span className="hairline mt-3 w-0 transition-all duration-700 ease-lux group-hover:w-full" />
           </a>

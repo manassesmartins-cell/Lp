@@ -93,14 +93,14 @@ export default function Hero() {
              luz derramada da porta. */
           className="eyebrow text-ivory/80 [text-shadow:0_1px_3px_rgba(5,5,5,0.95),0_2px_22px_rgba(5,5,5,0.9)]"
         >
-          Convite pessoal e intransferível
+          {siteConfig.lineage}
         </motion.span>
 
         {/* `lining-nums`: a Cormorant usa algarismos antigos por padrão e o
-            "222" sairia menor que as maiúsculas. */}
+            "702" sairia menor que as maiúsculas. */}
         <h1 className="mt-6 font-display text-[clamp(3rem,13vw,8.5rem)] font-light leading-[0.88] tracking-[0.02em] lining-nums">
           <SplitText
-            text="AFTER 222"
+            text={siteConfig.name}
             className="drop-shadow-[0_0_60px_rgba(193,18,31,0.3)]"
             letterClassName="text-crimson-sheen"
             delay={0.45}

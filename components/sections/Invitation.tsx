@@ -8,12 +8,15 @@ import {
   type MotionValue,
 } from "framer-motion";
 import Particles from "@/components/effects/Particles";
+import { siteConfig } from "@/lib/site-config";
 
-const LINES = [
-  "Algumas festas terminam.",
-  "Outras começam quando ninguém mais espera.",
-  "Às 23:00, uma porta se abre.",
-  "Quem recebeu o convite sabe exatamente onde ir.",
+/** `emphasis` marca as linhas que acendem em carmim. */
+const LINES: Array<{ text: string; emphasis?: boolean }> = [
+  { text: "Algumas festas terminam." },
+  { text: "Outras começam quando ninguém mais espera." },
+  { text: "Às 23:00, uma porta se abre.", emphasis: true },
+  { text: "Quem recebeu o convite sabe exatamente onde ir." },
+  { text: siteConfig.promise, emphasis: true },
 ];
 
 type LineProps = {
@@ -60,7 +63,7 @@ export default function Invitation() {
   });
 
   /* Cada linha ocupa uma faixa do progresso, com leve sobreposição. */
-  const step = 0.17;
+  const step = 0.15;
 
   const eyebrowOpacity = useTransform(scrollYProgress, [0, 0.08], [0, 1]);
 
@@ -87,11 +90,11 @@ export default function Invitation() {
             <div className="flex flex-col gap-9 text-center sm:gap-11">
               {LINES.map((line, index) => (
                 <FadeLine
-                  key={line}
+                  key={line.text}
                   progress={scrollYProgress}
-                  text={line}
+                  text={line.text}
                   start={0.06 + index * step}
-                  emphasis={index === 2}
+                  emphasis={line.emphasis}
                 />
               ))}
             </div>
