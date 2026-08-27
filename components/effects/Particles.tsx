@@ -86,9 +86,9 @@ export default function Particles({ density = 26, className = "" }: Props) {
         const alpha = m.alpha * twinkle;
 
         const glow = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, m.r * 5);
-        glow.addColorStop(0, `rgba(242, 220, 149, ${alpha})`);
-        glow.addColorStop(0.4, `rgba(212, 175, 55, ${alpha * 0.35})`);
-        glow.addColorStop(1, "rgba(212, 175, 55, 0)");
+        glow.addColorStop(0, `rgba(255, 107, 125, ${alpha})`);
+        glow.addColorStop(0.4, `rgba(193, 18, 31, ${alpha * 0.35})`);
+        glow.addColorStop(1, "rgba(193, 18, 31, 0)");
 
         ctx.fillStyle = glow;
         ctx.beginPath();

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import PlaceholderArt from "./gallery/PlaceholderArt";
-import { gallery, type GalleryItem } from "@/lib/site-config";
+import { gallery, siteConfig, type GalleryItem } from "@/lib/site-config";
 
 /** Peso de cada peça no grid editorial (6 colunas no desktop). */
 const SPANS: Record<GalleryItem["span"], string> = {
@@ -39,7 +39,7 @@ export default function Gallery() {
                 delay: (index % 3) * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className={`group relative row-span-2 overflow-hidden rounded-xl border border-white/[0.06] bg-void-soft transition-colors duration-700 ease-lux hover:border-gold/30 ${SPANS[item.span]}`}
+              className={`group relative row-span-2 overflow-hidden rounded-xl border border-white/[0.06] bg-void-soft transition-colors duration-700 ease-lux hover:border-crimson/30 ${SPANS[item.span]}`}
             >
               {/* Imagem real quando disponível; senão, placeholder gerado. */}
               <div className="absolute inset-0 transition-transform duration-[1400ms] ease-lux group-hover:scale-[1.09]">
@@ -62,16 +62,16 @@ export default function Gallery() {
                 className="absolute inset-0 bg-gradient-to-t from-void via-void/25 to-transparent opacity-90 transition-opacity duration-700 ease-lux group-hover:opacity-60"
               />
 
-              {/* Brilho dourado nas bordas */}
+              {/* Brilho carmim nas bordas */}
               <div
                 aria-hidden
-                className="absolute inset-0 opacity-0 shadow-[inset_0_0_60px_-12px_rgba(212,175,55,0.5)] transition-opacity duration-700 ease-lux group-hover:opacity-100"
+                className="absolute inset-0 opacity-0 shadow-[inset_0_0_60px_-12px_rgba(193,18,31,0.5)] transition-opacity duration-700 ease-lux group-hover:opacity-100"
               />
 
               {/* Índice */}
               <span
                 aria-hidden
-                className="absolute right-4 top-3.5 font-sans text-[0.55rem] tracking-widest text-white/25 transition-colors duration-500 group-hover:text-gold/70"
+                className="absolute right-4 top-3.5 font-sans text-[0.55rem] tracking-widest text-white/25 transition-colors duration-500 group-hover:text-crimson/70"
               >
                 {item.index}
               </span>
@@ -79,9 +79,9 @@ export default function Gallery() {
               <figcaption className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-5">
                 <span
                   aria-hidden
-                  className="h-px w-0 bg-gold transition-all duration-700 ease-lux group-hover:w-7"
+                  className="h-px w-0 bg-crimson transition-all duration-700 ease-lux group-hover:w-7"
                 />
-                <span className="translate-y-1 font-sans text-[0.65rem] uppercase tracking-widest text-white/50 transition-all duration-700 ease-lux group-hover:translate-y-0 group-hover:text-gold-light">
+                <span className="translate-y-1 font-sans text-[0.65rem] uppercase tracking-widest text-white/50 transition-all duration-700 ease-lux group-hover:translate-y-0 group-hover:text-crimson-light">
                   {item.caption}
                 </span>
               </figcaption>
@@ -90,7 +90,7 @@ export default function Gallery() {
         </div>
 
         <p className="mt-10 text-center font-sans text-[0.6rem] uppercase tracking-widest text-white/20">
-          Registro parcial • Câmeras não são permitidas no Quarto 222
+          Registro parcial • Câmeras não são permitidas no {siteConfig.room}
         </p>
       </div>
     </section>

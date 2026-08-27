@@ -9,24 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Preto profundo — base da identidade */
+        /* Preto levemente quente — base da identidade */
         void: {
-          DEFAULT: "#090909",
-          soft: "#0D0D0D",
-          deep: "#050505",
+          DEFAULT: "#0A0708",
+          soft: "#100C0D",
+          deep: "#050304",
         },
-        /* Dourado metálico */
-        gold: {
-          DEFAULT: "#D4AF37",
-          light: "#F2DC95",
-          deep: "#8C6D1F",
-          dim: "#6B5416",
+        /* Carmim — a cor da ruptura */
+        crimson: {
+          DEFAULT: "#C1121F",
+          light: "#FF6B7D",
+          glow: "#FF9AA6",
+          deep: "#7A0A16",
+          dim: "#4A0710",
         },
-        /* Acentos azul escuro — Blue Tree */
-        bluetree: {
-          DEFAULT: "#12294F",
-          light: "#1E4079",
-          deep: "#0A1730",
+        /* Vinho profundo — sombra e volume */
+        wine: {
+          DEFAULT: "#3D0A14",
+          light: "#5C1020",
+          deep: "#240509",
+        },
+        /* Marfim — tipografia sobre o preto e sobre o carmim */
+        ivory: {
+          DEFAULT: "#F7EFEA",
+          dim: "#D8C9C4",
         },
       },
       fontFamily: {
@@ -38,15 +44,15 @@ const config: Config = {
         cinematic: "0.4em",
       },
       boxShadow: {
-        gold: "0 0 40px -12px rgba(212, 175, 55, 0.45)",
-        "gold-lg": "0 0 90px -20px rgba(212, 175, 55, 0.55)",
+        crimson: "0 0 40px -12px rgba(193, 18, 31, 0.45)",
+        "crimson-lg": "0 0 90px -20px rgba(193, 18, 31, 0.55)",
         inset: "inset 0 1px 0 0 rgba(255, 255, 255, 0.06)",
       },
       backgroundImage: {
-        "gold-sheen":
-          "linear-gradient(105deg, #8C6D1F 0%, #D4AF37 32%, #F2DC95 50%, #D4AF37 68%, #8C6D1F 100%)",
-        "gold-line":
-          "linear-gradient(90deg, transparent, rgba(212,175,55,0.6) 50%, transparent)",
+        "crimson-sheen":
+          "linear-gradient(105deg, #7A0A16 0%, #C1121F 32%, #FF6B7D 50%, #C1121F 68%, #7A0A16 100%)",
+        "crimson-line":
+          "linear-gradient(90deg, transparent, rgba(193,18,31,0.6) 50%, transparent)",
       },
       transitionTimingFunction: {
         lux: "cubic-bezier(0.16, 1, 0.3, 1)",

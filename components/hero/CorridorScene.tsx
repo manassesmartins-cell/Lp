@@ -1,5 +1,7 @@
 "use client";
 
+import { siteConfig } from "@/lib/site-config";
+
 /**
  * Corredor de hotel em perspectiva de um ponto, desenhado em SVG.
  * Nenhuma imagem externa: a cena escala sem perder nitidez e
@@ -73,34 +75,34 @@ export default function CorridorScene() {
         <linearGradient id="wallGrad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#060606" />
           <stop offset="55%" stopColor="#0C0C0D" />
-          <stop offset="100%" stopColor="#1A1712" />
+          <stop offset="100%" stopColor="#190709" />
         </linearGradient>
 
         {/* Teto */}
         <linearGradient id="ceilGrad" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stopColor="#100E0B" />
-          <stop offset="100%" stopColor="#050505" />
+          <stop offset="0%" stopColor="#0D0607" />
+          <stop offset="100%" stopColor="#050304" />
         </linearGradient>
 
         {/* Piso: reflexivo, clareia rumo à porta */}
         <linearGradient id="floorGrad" x1="0" y1="1" x2="0" y2="0">
           <stop offset="0%" stopColor="#070707" />
           <stop offset="60%" stopColor="#0B0A09" />
-          <stop offset="100%" stopColor="#211B10" />
+          <stop offset="100%" stopColor="#1C0609" />
         </linearGradient>
 
         {/* A porta 222 — luz quente */}
         <linearGradient id="doorLight" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#FFF3CE" />
-          <stop offset="35%" stopColor="#F2DC95" />
-          <stop offset="100%" stopColor="#D4AF37" />
+          <stop offset="0%" stopColor="#FFE1E5" />
+          <stop offset="35%" stopColor="#FF6B7D" />
+          <stop offset="100%" stopColor="#C1121F" />
         </linearGradient>
 
         {/* Luz derramada da porta sobre o piso */}
         <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.22" />
-          <stop offset="45%" stopColor="#D4AF37" stopOpacity="0.06" />
-          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
+          <stop offset="0%" stopColor="#C1121F" stopOpacity="0.22" />
+          <stop offset="45%" stopColor="#C1121F" stopOpacity="0.06" />
+          <stop offset="100%" stopColor="#C1121F" stopOpacity="0" />
         </linearGradient>
 
         {/* Reflexo da porta: opaco junto ao piso, dissolvendo ao se afastar.
@@ -108,29 +110,29 @@ export default function CorridorScene() {
             transparente (topo do rect = extremidade distante) ao opaco
             (base do rect = linha do piso). */}
         <linearGradient id="reflect" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
-          <stop offset="60%" stopColor="#D4AF37" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#F2DC95" stopOpacity="0.6" />
+          <stop offset="0%" stopColor="#C1121F" stopOpacity="0" />
+          <stop offset="60%" stopColor="#C1121F" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#FF6B7D" stopOpacity="0.6" />
         </linearGradient>
 
-        {/* Acento azul Blue Tree nas quinas frontais */}
-        <linearGradient id="blueEdge" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#1E4079" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#12294F" stopOpacity="0" />
+        {/* Vinho profundo nas quinas frontais */}
+        <linearGradient id="wineEdge" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#5C1020" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="#3D0A14" stopOpacity="0" />
         </linearGradient>
 
         {/* Halo das arandelas */}
         <radialGradient id="sconceGlow">
-          <stop offset="0%" stopColor="#F2DC95" stopOpacity="0.85" />
-          <stop offset="35%" stopColor="#D4AF37" stopOpacity="0.28" />
-          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
+          <stop offset="0%" stopColor="#FF6B7D" stopOpacity="0.85" />
+          <stop offset="35%" stopColor="#C1121F" stopOpacity="0.28" />
+          <stop offset="100%" stopColor="#C1121F" stopOpacity="0" />
         </radialGradient>
 
         {/* Névoa atmosférica em torno do ponto de fuga */}
         <radialGradient id="haze">
-          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.22" />
-          <stop offset="45%" stopColor="#8C6D1F" stopOpacity="0.08" />
-          <stop offset="100%" stopColor="#090909" stopOpacity="0" />
+          <stop offset="0%" stopColor="#C1121F" stopOpacity="0.22" />
+          <stop offset="45%" stopColor="#7A0A16" stopOpacity="0.08" />
+          <stop offset="100%" stopColor="#0A0708" stopOpacity="0" />
         </radialGradient>
 
         <filter id="softGlow" x="-120%" y="-120%" width="340%" height="340%">
@@ -156,13 +158,13 @@ export default function CorridorScene() {
             fill="url(#wallGrad)"
           />
 
-          {/* Rodapé dourado acompanhando a linha do piso */}
+          {/* Rodapé carmim acompanhando a linha do piso */}
           <line
             x1="0"
             y1={floorAt(0)}
             x2={END_L}
             y2={floorAt(END_L)}
-            stroke="#D4AF37"
+            stroke="#C1121F"
             strokeOpacity="0.22"
             strokeWidth="2"
           />
@@ -172,7 +174,7 @@ export default function CorridorScene() {
             y1={ceilingAt(0)}
             x2={END_L}
             y2={ceilingAt(END_L)}
-            stroke="#D4AF37"
+            stroke="#C1121F"
             strokeOpacity="0.1"
             strokeWidth="1.5"
           />
@@ -181,11 +183,11 @@ export default function CorridorScene() {
             <g key={`door-${near}`}>
               {/* Vão da porta */}
               <polygon points={sideDoor(near, far)} fill="#040404" />
-              {/* Batente dourado */}
+              {/* Batente carmim */}
               <polygon
                 points={sideDoor(near, far)}
                 fill="none"
-                stroke="#D4AF37"
+                stroke="#C1121F"
                 strokeOpacity="0.3"
                 strokeWidth="1.5"
               />
@@ -195,7 +197,7 @@ export default function CorridorScene() {
                 y1={floorAt(near) - 3}
                 x2={far}
                 y2={floorAt(far) - 2}
-                stroke="#D4AF37"
+                stroke="#C1121F"
                 strokeOpacity="0.32"
                 strokeWidth="2.5"
                 filter="url(#tightGlow)"
@@ -221,21 +223,21 @@ export default function CorridorScene() {
                   cy={sconceAt(x)}
                   rx={Math.max(2.2, r * 0.16)}
                   ry={Math.max(5, r * 0.4)}
-                  fill="#F7E9BE"
+                  fill="#FFD6DC"
                   filter="url(#tightGlow)"
                 />
               </g>
             );
           })}
 
-          {/* Quina frontal com o azul do Blue Tree */}
-          <polygon points={`0,0 90,20 90,${VB_H - 30} 0,${VB_H}`} fill="url(#blueEdge)" />
+          {/* Quina frontal em vinho */}
+          <polygon points={`0,0 90,20 90,${VB_H - 30} 0,${VB_H}`} fill="url(#wineEdge)" />
         </g>
       </defs>
 
       {/* ── Cena ───────────────────────────────────────────── */}
 
-      <rect width={VB_W} height={VB_H} fill="#090909" />
+      <rect width={VB_W} height={VB_H} fill="#0A0708" />
 
       {/* Teto */}
       <polygon
@@ -245,7 +247,7 @@ export default function CorridorScene() {
       {/* Sanca de luz central no teto */}
       <polygon
         points={`720,0 880,0 ${END_R - 18},${END_T} ${END_L + 18},${END_T}`}
-        fill="#D4AF37"
+        fill="#C1121F"
         fillOpacity="0.035"
       />
 
@@ -265,7 +267,7 @@ export default function CorridorScene() {
         y={END_T}
         width={END_R - END_L}
         height={END_B - END_T}
-        fill="#0B0A08"
+        fill="#0B0708"
       />
 
       {/* Névoa quente ao redor da porta */}
@@ -294,7 +296,7 @@ export default function CorridorScene() {
         width={DOOR_W + 12}
         height={END_B - DOOR_T + 6}
         fill="none"
-        stroke="#D4AF37"
+        stroke="#C1121F"
         strokeOpacity="0.55"
         strokeWidth="2.5"
       />
@@ -303,16 +305,16 @@ export default function CorridorScene() {
         x={DOOR_X + DOOR_W / 2}
         y={DOOR_T + 42}
         textAnchor="middle"
-        fill="#3A2E12"
+        fill="#2E0409"
         fillOpacity="0.85"
         fontFamily="Georgia, 'Times New Roman', serif"
         fontSize="30"
         letterSpacing="2.5"
       >
-        222
+        {siteConfig.roomNumber}
       </text>
       {/* Maçaneta */}
-      <circle cx={DOOR_X + DOOR_W - 13} cy={DOOR_T + 118} r="3.2" fill="#4A3A16" fillOpacity="0.8" />
+      <circle cx={DOOR_X + DOOR_W - 13} cy={DOOR_T + 118} r="3.2" fill="#3C0810" fillOpacity="0.8" />
 
       {/* Reflexo da porta no piso: espelhado na linha do piso e esmaecido */}
       <g opacity="0.4" transform={`translate(0, ${2 * END_B}) scale(1,-1)`}>

@@ -64,7 +64,7 @@ export default function CursorLight() {
         className="h-[680px] w-[680px] rounded-full will-change-transform"
         style={{
           background:
-            "radial-gradient(circle, rgba(212,175,55,0.075) 0%, rgba(212,175,55,0.03) 35%, rgba(18,41,79,0.02) 60%, transparent 72%)",
+            "radial-gradient(circle, rgba(193,18,31,0.075) 0%, rgba(193,18,31,0.03) 35%, rgba(61,10,20,0.02) 60%, transparent 72%)",
         }}
       />
     </div>

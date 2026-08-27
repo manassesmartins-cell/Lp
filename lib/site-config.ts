@@ -5,13 +5,17 @@
 
 export const siteConfig = {
   name: "AFTER 222",
-  tagline: "Nem todo quarto é igual. Nem toda noite se repete.",
+  tagline: "Você entra de um jeito. Não sai o mesmo.",
   description:
-    "Um convite secreto. Às 02:22, uma porta se abre no Blue Tree, em Jaguariúna. Quarto 222.",
+    "Um convite secreto. Às 23:00, uma porta se abre no Hotel Boulevard Blue Valley, em Belo Horizonte. Quarto 702.",
   url: "https://after222.com.br",
-  venue: "Blue Tree",
-  city: "Jaguariúna",
-  room: "Quarto 222",
+  venue: "Hotel Boulevard Blue Valley",
+  /** Versão curta, para linhas estreitas (hero no mobile, rodapé). */
+  venueShort: "Boulevard Blue Valley",
+  city: "Belo Horizonte",
+  room: "Quarto 702",
+  /** Só o número — é o que aparece gravado na porta do corredor. */
+  roomNumber: "702",
 
   /**
    * ─────────────────────────────────────────────────────────────
@@ -22,20 +26,22 @@ export const siteConfig = {
    *  Formato: ISO 8601 com fuso horário explícito, em relógio de 24 h.
    *  `-03:00` = horário de Brasília.
    *
-   *  A hora do evento é 02:22 da madrugada (02:22 AM) — em 24 h isso é
-   *  "T02:22:00". Duas da tarde seria "T14:22:00"; não use esse.
+   *  A porta abre às 23:00 — em 24 h, "T23:00:00".
    *
-   *  Só a DATA muda de edição para edição:
-   *    "2026-09-12T02:22:00-03:00"  → 12/set/2026 às 02:22 da madrugada
-   *    "2026-12-31T02:22:00-03:00"  → 31/dez/2026 às 02:22 da madrugada
+   *  Exemplos:
+   *    "2026-08-27T23:00:00-03:00"  → quinta, 27/ago/2026 às 23:00
+   *    "2026-09-04T23:00:00-03:00"  → sexta, 04/set/2026 às 23:00
    */
-  eventDate: "2026-09-12T02:22:00-03:00",
+  eventDate: "2026-08-27T23:00:00-03:00",
 
   /**
    * Rótulo humano exibido abaixo do contador.
    * Não é derivado de `eventDate` — ao trocar a data, troque aqui também.
    */
-  eventDateLabel: "12 de setembro • 02:22",
+  eventDateLabel: "Quinta-feira, 27/08 • 23:00",
+
+  /** Versão compacta, para a linha de informações do hero. */
+  eventShort: "Quinta · 23:00",
 
   links: {
     instagram: "https://instagram.com/after222",
@@ -64,7 +70,13 @@ export const lineup: LineupArtist[] = [
 
 export type Rule = {
   /** Nome do ícone em `lucide-react`. */
-  icon: "Lock" | "TicketCheck" | "MapPinOff" | "Sparkles" | "GlassWater";
+  icon:
+    | "Lock"
+    | "TicketCheck"
+    | "MapPinOff"
+    | "Sparkles"
+    | "GlassWater"
+    | "WineOff";
   title: string;
   detail: string;
 };
@@ -84,6 +96,11 @@ export const rules: Rule[] = [
     icon: "MapPinOff",
     title: "Local divulgado apenas para participantes",
     detail: "O endereço chega poucas horas antes.",
+  },
+  {
+    icon: "WineOff",
+    title: "Não é permitido trazer bebidas de fora",
+    detail: "O bar é nosso. A curadoria também.",
   },
   {
     icon: "Sparkles",
@@ -110,7 +127,7 @@ export type GalleryItem = {
     | "lights"
     | "dj"
     | "guests"
-    | "goldDetail";
+    | "crimsonDetail";
   /**
    * Caminho da imagem real. Deixe `null` para exibir o placeholder gerado.
    * Ex.: "/gallery/corredor.jpg" (arquivo em `public/gallery/`).
@@ -127,5 +144,21 @@ export const gallery: GalleryItem[] = [
   { caption: "Iluminação noturna", index: "04", art: "lights", src: null, span: "wide" },
   { caption: "A cabine", index: "05", art: "dj", src: null, span: "regular" },
   { caption: "Os convidados", index: "06", art: "guests", src: null, span: "regular" },
-  { caption: "Detalhes dourados", index: "07", art: "goldDetail", src: null, span: "tall" },
+  { caption: "Detalhes em carmim", index: "07", art: "crimsonDetail", src: null, span: "tall" },
 ];
+
+/**
+ * Seção "Ruptura" — o conceito da edição.
+ * A tela se parte em duas e a luz vermelha vaza pela fenda.
+ */
+export const rupture = {
+  eyebrow: "Ruptura",
+  before: "Antes",
+  after: "Depois",
+  word: "RUPTURA",
+  lines: [
+    "Existe a pessoa que atravessa aquela porta.",
+    "E existe a que volta.",
+  ],
+  closing: "Não são a mesma.",
+} as const;

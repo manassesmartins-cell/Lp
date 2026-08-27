@@ -21,7 +21,7 @@ export default function FlipDigit({ value }: Props) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           /* O recorte do gradiente vive em cada dígito: `background-clip: text`
              só pinta os glifos do próprio elemento. */
-          className="text-gold-sheen absolute inset-0 flex items-center justify-center"
+          className="text-crimson-sheen absolute inset-0 flex items-center justify-center"
         >
           {value}
         </motion.span>

@@ -15,7 +15,7 @@ const SPRING = { stiffness: 220, damping: 22, mass: 0.5 };
 
 /**
  * Card do line-up com inclinação 3D seguindo o ponteiro
- * e brilho dourado no hover.
+ * e brilho carmim no hover.
  */
 export default function ArtistCard({ artist, index, widthClass }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -55,12 +55,12 @@ export default function ArtistCard({ artist, index, widthClass }: Props) {
         onPointerMove={handleMove}
         onPointerLeave={handleLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="group relative h-full overflow-hidden rounded-2xl glass p-8 transition-[border-color,box-shadow] duration-700 ease-lux hover:border-gold/35 hover:shadow-gold-lg sm:p-9"
+        className="group relative h-full overflow-hidden rounded-2xl glass p-8 transition-[border-color,box-shadow] duration-700 ease-lux hover:border-crimson/35 hover:shadow-crimson-lg sm:p-9"
       >
         {/* Monograma ao fundo */}
         <span
           aria-hidden
-          className="pointer-events-none absolute -right-3 -top-7 select-none font-display text-[7.5rem] font-light leading-none text-white/[0.035] transition-all duration-700 ease-lux group-hover:text-gold/[0.09] sm:text-[9rem]"
+          className="pointer-events-none absolute -right-3 -top-7 select-none font-display text-[7.5rem] font-light leading-none text-white/[0.035] transition-all duration-700 ease-lux group-hover:text-crimson/[0.09] sm:text-[9rem]"
         >
           {artist.initials}
         </span>
@@ -74,18 +74,18 @@ export default function ArtistCard({ artist, index, widthClass }: Props) {
               "--shine-x": shineX,
               "--shine-y": shineY,
               background:
-                "radial-gradient(340px circle at var(--shine-x) var(--shine-y), rgba(212,175,55,0.14), transparent 65%)",
+                "radial-gradient(340px circle at var(--shine-x) var(--shine-y), rgba(193,18,31,0.14), transparent 65%)",
             } as React.CSSProperties
           }
         />
 
-        {/* Halo dourado nas bordas */}
+        {/* Halo carmim nas bordas */}
         <span
           aria-hidden
           className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-700 ease-lux group-hover:opacity-100"
           style={{
             background:
-              "linear-gradient(140deg, rgba(212,175,55,0.22), transparent 42%, transparent 62%, rgba(30,64,121,0.22))",
+              "linear-gradient(140deg, rgba(193,18,31,0.22), transparent 42%, transparent 62%, rgba(92,16,32,0.22))",
             maskImage:
               "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
             maskComposite: "exclude",
@@ -102,7 +102,7 @@ export default function ArtistCard({ artist, index, widthClass }: Props) {
             {artist.emoji}
           </span>
 
-          <h3 className="mt-6 font-display text-3xl font-light leading-tight text-white transition-colors duration-500 group-hover:text-gold-light sm:text-[2rem]">
+          <h3 className="mt-6 font-display text-3xl font-light leading-tight text-white transition-colors duration-500 group-hover:text-crimson-light sm:text-[2rem]">
             {artist.name}
           </h3>
 

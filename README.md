@@ -1,9 +1,11 @@
 # AFTER 222
 
-Landing page do **AFTER 222** — evento privado no Blue Tree, em Jaguariúna — Quarto 222.
+Landing page do **AFTER 222** — evento privado no Hotel Boulevard Blue Valley,
+em Belo Horizonte — Quarto 702.
 
-Preto profundo, dourado metálico e acentos azuis do Blue Tree. A página foi
-construída para parecer um convite secreto, não uma página de evento comum.
+Preto quente, carmim e marfim. A página foi construída para parecer um convite
+secreto, não uma página de evento comum, e é atravessada por um conceito:
+**ruptura** — você não é o mesmo antes e depois de cruzar aquela porta.
 
 ## Stack
 
@@ -33,15 +35,15 @@ Praticamente tudo que muda de edição para edição está em
 
 ```ts
 // lib/site-config.ts
-eventDate: "2026-09-12T02:22:00-03:00",   // ISO 8601 com fuso (-03:00 = Brasília)
-eventDateLabel: "12 de setembro • 02:22", // rótulo exibido abaixo do contador
+eventDate: "2026-08-27T23:00:00-03:00",       // ISO 8601 com fuso (-03:00 = Brasília)
+eventDateLabel: "Quinta-feira, 27/08 • 23:00", // rótulo abaixo do contador
+eventShort: "Quinta · 23:00",                 // versão compacta, no hero
 ```
 
-O horário é **02:22 da madrugada**. O formato é de 24 horas, então 02:22 AM
-é `T02:22:00` — duas da tarde seria `T14:22:00`. Só a data costuma mudar.
+A porta abre às **23:00** — em relógio de 24 horas, `T23:00:00`.
 
-`eventDateLabel` não é derivado de `eventDate`: ao trocar a data, troque os
-dois campos.
+Nem `eventDateLabel` nem `eventShort` derivam de `eventDate`: ao trocar a data,
+troque os três campos.
 
 O contador recalcula a cada segundo, zera sozinho quando a data chega
 (passa a exibir "A porta está aberta.") e avisa no console se a data estiver
@@ -57,6 +59,13 @@ links: {
   guestList: "https://wa.me/5511994294906?text=...", // "Entrar na lista" e "Quero meu acesso"
 }
 ```
+
+### Local e quarto
+
+`venue` é o nome completo do hotel e `venueShort` a versão curta — o hero e o
+rodapé usam a curta porque o nome inteiro não cabe em uma linha no mobile.
+`roomNumber` é só o número, e é ele que aparece gravado na porta do corredor
+do hero: mudar o quarto na configuração muda a porta desenhada.
 
 ### Line-up, regras e galeria
 
@@ -94,28 +103,50 @@ components/
   hero/
     Hero.tsx           tela cheia, parallax de scroll e de mouse
     CorridorScene.tsx  corredor em perspectiva de um ponto (SVG puro)
-  sections/            Invitation, Lineup, Countdown, Rules, Gallery,
-                       FinalCall, Footer
+  sections/            Invitation, Rupture, Lineup, Countdown, Rules,
+                       Gallery, FinalCall, Footer
   effects/
     Particles.tsx      poeira suspensa em canvas
     CursorLight.tsx    iluminação que acompanha o cursor
   providers/
     SmoothScroll.tsx   Lenis
-  ui/                  Reveal, SplitText, GoldButton, SectionHeading,
+  ui/                  Reveal, SplitText, CrimsonButton, SectionHeading,
                        ScrollProgress
 lib/
   site-config.ts       conteúdo e configuração
   use-countdown.ts     hook da contagem regressiva
 ```
 
+### A seção Ruptura
+
+`Rupture.tsx` encena o conceito em vez de descrevê-lo: duas metades sólidas
+cobrem a tela e se afastam conforme o scroll, deixando a luz carmim vazar pela
+fenda. "Antes" fica preso na metade de cima, "Depois" na de baixo, e a palavra
+RUPTURA só existe no vão. Os textos são ancorados na linha da fenda — um acima,
+outro abaixo — para que ela nunca corte uma frase, em nenhuma altura de tela.
+
+O texto vem de `rupture` em `lib/site-config.ts`.
+
 ### O corredor do hero
 
 `CorridorScene.tsx` desenha o corredor em SVG, sem imagem externa: paredes,
-piso, teto, portas laterais em perspectiva, arandelas e a porta 222 acesa ao
+piso, teto, portas laterais em perspectiva, arandelas e a porta acesa ao
 fundo. A geometria sai de um punhado de constantes no topo do arquivo
 (`END_L`, `END_R`, `END_T`, `END_B`, `DOOR_*`) — mexer nelas reposiciona a
 cena inteira de forma coerente. A parede direita é a esquerda espelhada via
 `<use>`, então qualquer detalhe adicionado à esquerda aparece dos dois lados.
+
+## Paleta
+
+| Token     | Uso                                        |
+| --------- | ------------------------------------------ |
+| `void`    | Preto levemente quente — fundo             |
+| `crimson` | Carmim — a cor da ruptura, CTAs, destaques |
+| `wine`    | Vinho profundo — sombra e volume           |
+| `ivory`   | Marfim — texto sobre preto e sobre carmim  |
+
+Texto sobre o carmim é sempre `ivory`: texto escuro no vermelho não tem
+contraste suficiente.
 
 ## Acessibilidade e desempenho
 

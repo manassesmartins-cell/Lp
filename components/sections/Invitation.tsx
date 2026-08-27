@@ -12,7 +12,7 @@ import Particles from "@/components/effects/Particles";
 const LINES = [
   "Algumas festas terminam.",
   "Outras começam quando ninguém mais espera.",
-  "Às 02:22, uma porta se abre.",
+  "Às 23:00, uma porta se abre.",
   "Quem recebeu o convite sabe exatamente onde ir.",
 ];
 
@@ -42,7 +42,7 @@ function FadeLine({ progress, text, start, emphasis = false }: LineProps) {
       style={{ opacity, y, filter: blur }}
       className={`font-display font-light leading-[1.35] ${
         emphasis
-          ? "text-[clamp(1.75rem,5.2vw,3.4rem)] text-gold-sheen"
+          ? "text-[clamp(1.75rem,5.2vw,3.4rem)] text-crimson-sheen"
           : "text-[clamp(1.4rem,4.2vw,2.8rem)] text-white/75"
       }`}
     >
@@ -71,7 +71,7 @@ export default function Invitation() {
           {/* Brilho baixo, como luz vinda de baixo da porta */}
           <div
             aria-hidden
-            className="absolute left-1/2 top-1/2 h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-bluetree/20 blur-[130px]"
+            className="absolute left-1/2 top-1/2 h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-wine/20 blur-[130px]"
           />
           <Particles density={14} />
 

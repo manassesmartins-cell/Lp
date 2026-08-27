@@ -8,11 +8,11 @@ import {
   useSpring,
   useMotionValue,
 } from "framer-motion";
-import { MapPin, DoorClosed } from "lucide-react";
+import { MapPin, DoorClosed, Clock } from "lucide-react";
 import CorridorScene from "./CorridorScene";
 import Particles from "@/components/effects/Particles";
 import SplitText from "@/components/ui/SplitText";
-import GoldButton from "@/components/ui/GoldButton";
+import CrimsonButton from "@/components/ui/CrimsonButton";
 import { siteConfig } from "@/lib/site-config";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -68,7 +68,7 @@ export default function Hero() {
         style={{ opacity: glowOpacity }}
         className="absolute inset-0 -z-10"
       >
-        <div className="absolute left-1/2 top-[38%] h-[46vmax] w-[46vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.07] blur-[120px] animate-pulse-soft" />
+        <div className="absolute left-1/2 top-[38%] h-[46vmax] w-[46vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/[0.07] blur-[120px] animate-pulse-soft" />
       </motion.div>
 
       {/* Poeira suspensa */}
@@ -91,7 +91,7 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.2, ease: EASE }}
           /* Mais contraste que o `.eyebrow` padrão: aqui o texto cai sobre a
              luz derramada da porta. */
-          className="eyebrow text-gold/95 [text-shadow:0_1px_3px_rgba(5,5,5,0.95),0_2px_22px_rgba(5,5,5,0.9)]"
+          className="eyebrow text-ivory/80 [text-shadow:0_1px_3px_rgba(5,5,5,0.95),0_2px_22px_rgba(5,5,5,0.9)]"
         >
           Convite pessoal e intransferível
         </motion.span>
@@ -101,8 +101,8 @@ export default function Hero() {
         <h1 className="mt-6 font-display text-[clamp(3rem,13vw,8.5rem)] font-light leading-[0.88] tracking-[0.02em] lining-nums">
           <SplitText
             text="AFTER 222"
-            className="drop-shadow-[0_0_60px_rgba(212,175,55,0.3)]"
-            letterClassName="text-gold-sheen"
+            className="drop-shadow-[0_0_60px_rgba(193,18,31,0.3)]"
+            letterClassName="text-crimson-sheen"
             delay={0.45}
             stagger={0.075}
           />
@@ -131,26 +131,37 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 1.85, ease: EASE }}
           className="mt-10"
         >
-          <GoldButton href={siteConfig.links.guestList} size="lg">
+          <CrimsonButton href={siteConfig.links.guestList} size="lg">
             Entrar na lista
-          </GoldButton>
+          </CrimsonButton>
         </motion.div>
 
-        {/* Local e quarto */}
+        {/* Local, quarto e horário.
+            Usa `venueShort`: o nome completo do hotel não cabe em uma linha
+            no mobile com o tracking desta faixa. */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.4, delay: 2.15, ease: EASE }}
-          className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:gap-10"
+          className="mt-9 flex flex-col items-center gap-3.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-7 sm:gap-y-3"
         >
-          <span className="flex items-center gap-2.5 font-sans text-[0.68rem] uppercase tracking-widest text-white/45 sm:text-xs">
-            <MapPin className="h-3.5 w-3.5 text-gold/80" strokeWidth={1.5} />
-            {siteConfig.venue} · {siteConfig.city}
+          <span className="flex items-center gap-2.5 font-sans text-[0.6rem] uppercase tracking-[0.15em] text-white/45 sm:text-xs sm:tracking-widest">
+            <MapPin className="h-3.5 w-3.5 shrink-0 text-crimson" strokeWidth={1.5} />
+            {siteConfig.venueShort} · {siteConfig.city}
           </span>
+
           <span aria-hidden className="hidden h-4 w-px bg-white/10 sm:block" />
-          <span className="flex items-center gap-2.5 font-sans text-[0.68rem] uppercase tracking-widest text-white/45 sm:text-xs">
-            <DoorClosed className="h-3.5 w-3.5 text-gold/80" strokeWidth={1.5} />
+
+          <span className="flex items-center gap-2.5 font-sans text-[0.6rem] uppercase tracking-[0.15em] text-white/45 sm:text-xs sm:tracking-widest">
+            <DoorClosed className="h-3.5 w-3.5 shrink-0 text-crimson" strokeWidth={1.5} />
             {siteConfig.room}
+          </span>
+
+          <span aria-hidden className="hidden h-4 w-px bg-white/10 sm:block" />
+
+          <span className="flex items-center gap-2.5 font-sans text-[0.6rem] uppercase tracking-[0.15em] text-crimson-light sm:text-xs sm:tracking-widest">
+            <Clock className="h-3.5 w-3.5 shrink-0 text-crimson" strokeWidth={1.5} />
+            {siteConfig.eventShort}
           </span>
         </motion.div>
       </motion.div>
@@ -167,12 +178,12 @@ export default function Hero() {
         className="group absolute bottom-4 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex"
         aria-label="Rolar para o convite"
       >
-        <span className="font-sans text-[0.5rem] uppercase tracking-cinematic text-white/25 transition-colors duration-500 group-hover:text-gold/70">
+        <span className="font-sans text-[0.5rem] uppercase tracking-cinematic text-white/25 transition-colors duration-500 group-hover:text-crimson/70">
           Role
         </span>
         <span className="relative h-10 w-px overflow-hidden bg-white/10">
           <motion.span
-            className="absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-transparent via-gold to-transparent"
+            className="absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-transparent via-crimson to-transparent"
             animate={{ y: ["-100%", "380%"] }}
             transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
           />

@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
-import GoldButton from "@/components/ui/GoldButton";
+import CrimsonButton from "@/components/ui/CrimsonButton";
 import SplitText from "@/components/ui/SplitText";
 import Particles from "@/components/effects/Particles";
 import { siteConfig } from "@/lib/site-config";
 
 const LINES = [
   { text: "O relógio marca 22:22.", tone: "muted" },
-  { text: "A festa começa às 02:22.", tone: "muted" },
+  { text: "A porta abre às 23:00.", tone: "muted" },
   { text: "A diferença entre quem ouviu falar…", tone: "soft" },
   { text: "…e quem viveu…", tone: "soft" },
 ] as const;
@@ -29,7 +29,7 @@ export default function FinalCall() {
       {/* Fio de luz por baixo da porta */}
       <div
         aria-hidden
-        className="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.045] blur-[130px]"
+        className="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/[0.045] blur-[130px]"
       />
       <Particles density={16} />
 
@@ -60,8 +60,8 @@ export default function FinalCall() {
         >
           <SplitText
             text="é um convite."
-            className="drop-shadow-[0_0_50px_rgba(212,175,55,0.28)]"
-            letterClassName="text-gold-sheen"
+            className="drop-shadow-[0_0_50px_rgba(193,18,31,0.28)]"
+            letterClassName="text-crimson-sheen"
             delay={0.85}
             stagger={0.06}
             onScroll
@@ -70,9 +70,9 @@ export default function FinalCall() {
 
         <Reveal delay={1.15}>
           <div className="mt-16">
-            <GoldButton href={siteConfig.links.guestList} size="lg">
+            <CrimsonButton href={siteConfig.links.guestList} size="lg">
               Quero meu acesso
-            </GoldButton>
+            </CrimsonButton>
           </div>
         </Reveal>
 

@@ -25,7 +25,7 @@ export default function Countdown() {
     >
       <div
         aria-hidden
-        className="absolute left-1/2 top-1/2 h-[28rem] w-[70rem] max-w-[130vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.055] blur-[150px]"
+        className="absolute left-1/2 top-1/2 h-[28rem] w-[70rem] max-w-[130vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/[0.055] blur-[150px]"
       />
       <Particles density={12} />
 
@@ -52,17 +52,17 @@ export default function Countdown() {
             {UNITS.map(({ key, label }, index) => {
               const raw = timeLeft[key];
               const digits = String(raw)
-                .padStart(key === "days" ? 3 : 2, "0")
+                .padStart(2, "0")
                 .split("");
 
               return (
                 <div key={key} className="flex items-start">
                   <div className="group relative flex flex-col items-center">
-                    <div className="glass glass-gold relative overflow-hidden rounded-xl px-2 py-6 transition-shadow duration-700 ease-lux hover:shadow-gold sm:rounded-2xl sm:px-7 sm:py-9">
+                    <div className="glass glass-crimson relative overflow-hidden rounded-xl px-2 py-6 transition-shadow duration-700 ease-lux hover:shadow-crimson sm:rounded-2xl sm:px-7 sm:py-9">
                       {/* Brilho superior, como vidro polido */}
                       <span
                         aria-hidden
-                        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gold-line"
+                        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-crimson-line"
                       />
 
                       <span className="flex font-display text-[clamp(1.9rem,9vw,6.5rem)] font-light leading-none">
@@ -72,7 +72,7 @@ export default function Countdown() {
                           ))
                         ) : (
                           /* Antes da hidratação: mesmo espaço, sem números. */
-                          <span className="text-gold/25">
+                          <span className="text-crimson/25">
                             {digits.map((_, i) => (
                               <span
                                 key={i}
@@ -102,7 +102,7 @@ export default function Countdown() {
                         aria-hidden
                         animate={{ opacity: [0.55, 0.15, 0.55] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="text-[0.42em] text-gold"
+                        className="text-[0.42em] text-crimson"
                       >
                         :
                       </motion.span>

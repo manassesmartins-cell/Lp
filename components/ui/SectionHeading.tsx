@@ -11,7 +11,7 @@ type Props = {
   className?: string;
 };
 
-/** Cabeçalho padrão das seções: rótulo, filete dourado, título serifado. */
+/** Cabeçalho padrão das seções: rótulo, filete carmim, título serifado. */
 export default function SectionHeading({
   eyebrow,
   title,

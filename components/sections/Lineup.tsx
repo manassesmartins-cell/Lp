@@ -25,14 +25,14 @@ export default function Lineup() {
       aria-label="Line-up Oficial"
       className="grain relative overflow-hidden py-28 sm:py-36 lg:py-44"
     >
-      {/* Acento azul Blue Tree ao fundo */}
+      {/* Halo vinho ao fundo */}
       <div
         aria-hidden
-        className="absolute -left-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-bluetree/25 blur-[150px]"
+        className="absolute -left-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-wine/25 blur-[150px]"
       />
       <div
         aria-hidden
-        className="absolute -right-32 bottom-0 h-[30rem] w-[30rem] rounded-full bg-gold/[0.05] blur-[140px]"
+        className="absolute -right-32 bottom-0 h-[30rem] w-[30rem] rounded-full bg-crimson/[0.05] blur-[140px]"
       />
 
       <div className="relative mx-auto max-w-6xl px-6">

@@ -1,5 +1,6 @@
 import Hero from "@/components/hero/Hero";
 import Invitation from "@/components/sections/Invitation";
+import Rupture from "@/components/sections/Rupture";
 import Lineup from "@/components/sections/Lineup";
 import Countdown from "@/components/sections/Countdown";
 import Rules from "@/components/sections/Rules";
@@ -15,6 +16,7 @@ export default function Home() {
       <main id="top" className="relative bg-void">
         <Hero />
         <Invitation />
+        <Rupture />
         <Lineup />
         <Countdown />
         <Rules />

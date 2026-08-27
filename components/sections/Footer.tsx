@@ -24,7 +24,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden border-t border-white/[0.06] bg-void py-16 sm:py-20">
       <div
         aria-hidden
-        className="absolute left-1/2 top-0 h-40 w-[42rem] max-w-[110vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.06] blur-[100px]"
+        className="absolute left-1/2 top-0 h-40 w-[42rem] max-w-[110vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/[0.06] blur-[100px]"
       />
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-6 text-center">
@@ -35,7 +35,7 @@ export default function Footer() {
             className="group inline-flex flex-col items-center"
             aria-label="Voltar ao topo"
           >
-            <span className="font-display text-3xl font-light tracking-[0.18em] text-gold-sheen sm:text-4xl">
+            <span className="font-display text-3xl font-light tracking-[0.18em] text-crimson-sheen sm:text-4xl">
               AFTER 222
             </span>
             <span className="hairline mt-3 w-0 transition-all duration-700 ease-lux group-hover:w-full" />
@@ -58,14 +58,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all duration-500 ease-lux hover:-translate-y-0.5 hover:border-gold/45 hover:shadow-gold"
+                className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all duration-500 ease-lux hover:-translate-y-0.5 hover:border-crimson/45 hover:shadow-crimson"
               >
                 <span
                   aria-hidden
-                  className="absolute inset-0 rounded-full bg-gold/0 transition-colors duration-500 group-hover:bg-gold/[0.07]"
+                  className="absolute inset-0 rounded-full bg-crimson/0 transition-colors duration-500 group-hover:bg-crimson/[0.07]"
                 />
                 <Icon
-                  className="relative h-[1.05rem] w-[1.05rem] text-white/45 transition-colors duration-500 group-hover:text-gold"
+                  className="relative h-[1.05rem] w-[1.05rem] text-white/45 transition-colors duration-500 group-hover:text-crimson"
                   strokeWidth={1.4}
                 />
               </a>

@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 type Props = {
   children: ReactNode;
   href: string;
-  /** `solid` = dourado preenchido · `ghost` = contorno translúcido. */
+  /** `solid` = carmim preenchido · `ghost` = contorno translúcido. */
   variant?: "solid" | "ghost";
   size?: "md" | "lg";
   className?: string;
@@ -21,9 +21,9 @@ const SIZES = {
 
 /**
  * Botão de conversão: varredura de brilho contínua,
- * halo dourado no hover e resposta tátil no clique.
+ * halo carmim no hover e resposta tátil no clique.
  */
-export default function GoldButton({
+export default function CrimsonButton({
   children,
   href,
   variant = "solid",
@@ -42,8 +42,9 @@ export default function GoldButton({
         SIZES[size]
       } ${
         isSolid
-          ? "text-void shadow-gold"
-          : "glass glass-gold text-gold hover:text-gold-light"
+          ? /* Marfim sobre o carmim: texto escuro no vermelho não tem contraste. */
+            "text-ivory shadow-crimson"
+          : "glass glass-crimson text-crimson hover:text-crimson-light"
       } ${className}`}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.975, y: 0 }}
@@ -53,7 +54,7 @@ export default function GoldButton({
       {isSolid && (
         <span
           aria-hidden
-          className="absolute inset-0 bg-gold-sheen bg-[length:250%_100%] animate-sheen-slide"
+          className="absolute inset-0 bg-crimson-sheen bg-[length:250%_100%] animate-sheen-slide"
         />
       )}
 
@@ -61,7 +62,7 @@ export default function GoldButton({
       <span
         aria-hidden
         className={`absolute -inset-6 opacity-0 blur-2xl transition-opacity duration-700 ease-lux group-hover:opacity-100 ${
-          isSolid ? "bg-gold/40" : "bg-gold/20"
+          isSolid ? "bg-crimson/40" : "bg-crimson/20"
         }`}
       />
 
